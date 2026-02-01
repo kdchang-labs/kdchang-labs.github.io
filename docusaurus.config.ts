@@ -7,7 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "KD Labs 產品開發實驗室",
   tagline:
-    "軟體工程和產品開發現場觀察：專注於產品設計、軟體技術、產品專案管理與 AI 實驗與實作分享",
+    "軟體工程和產品開發現場觀察：專注於產品設計、軟體開發、產品專案管理與 AI 實驗與實作分享",
   favicon: "/img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
