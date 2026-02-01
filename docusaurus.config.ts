@@ -118,7 +118,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "resourceSidebar",
           position: "left",
-          label: "產品工具",
+          label: "產品專案",
         },
         { to: "/about", label: "關於本站", position: "left" },
 
@@ -142,7 +142,7 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "產品工具",
+              label: "產品專案",
               to: "/projects",
             },
             {
