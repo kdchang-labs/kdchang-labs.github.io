@@ -45,7 +45,7 @@ const config: Config = {
         },
         docs: {
           sidebarPath: "./sidebars.ts",
-          routeBasePath: "/tools",
+          routeBasePath: "/projects",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: undefined,
@@ -83,7 +83,7 @@ const config: Config = {
         // highlight term
         highlightSearchTermsOnTargetPage: true,
         // docs route base path
-        docsRouteBasePath: "/tools",
+        docsRouteBasePath: "/projects",
         blogRouteBasePath: "/blog",
       },
     ],
@@ -118,7 +118,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "resourceSidebar",
           position: "left",
-          label: "好用工具",
+          label: "產品工具",
         },
         { to: "/about", label: "關於本站", position: "left" },
 
@@ -142,8 +142,8 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "好用工具",
-              to: "/tools",
+              label: "產品工具",
+              to: "/projects",
             },
             {
               label: "熱門文章",

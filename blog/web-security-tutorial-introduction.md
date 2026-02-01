@@ -10,7 +10,7 @@ authors: kdchang
 
 # 前言
 
-隨著越來越多的服務和資料連上網路，Web 資訊安全已經是 Web 開發中一個重要的環節，然而許多開發者往往希望專注在應用程式的研發，而忽略了資訊安全的重要性。不過若是沒有嚴謹地考慮資訊安全的問題，等到事情發生後反而會造成更嚴重的財務和名譽上的損失。本文希望整理一些 Web 常見資訊安全（Security）的議題和好用工具和讀者一起教學相長，下次建構網路服務時可以更留心 Web 的資訊安全，甚至努力成為一個好的白帽駭客（White Hat Hacker）。
+隨著越來越多的服務和資料連上網路，Web 資訊安全已經是 Web 開發中一個重要的環節，然而許多開發者往往希望專注在應用程式的研發，而忽略了資訊安全的重要性。不過若是沒有嚴謹地考慮資訊安全的問題，等到事情發生後反而會造成更嚴重的財務和名譽上的損失。本文希望整理一些 Web 常見資訊安全（Security）的議題和產品工具和讀者一起教學相長，下次建構網路服務時可以更留心 Web 的資訊安全，甚至努力成為一個好的白帽駭客（White Hat Hacker）。
 
 # 常見 Web 資訊安全（Security）議題
 
@@ -141,7 +141,7 @@ authors: kdchang
 
 # 總結
 
-以上整理一些 Web 常見資訊安全（Security）的議題和好用工具和讀者一起教學相長，成為一個好的白帽駭客（White Hat Hacker）。隨著網路科技的發展，資訊安全的議題只會越來越重要，當下次當有產品要上線到正式環境時，不妨使用 [The Security Checklist](https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md) 確認一下有哪些資安注意事項是我們沒有注意到的。
+以上整理一些 Web 常見資訊安全（Security）的議題和產品工具和讀者一起教學相長，成為一個好的白帽駭客（White Hat Hacker）。隨著網路科技的發展，資訊安全的議題只會越來越重要，當下次當有產品要上線到正式環境時，不妨使用 [The Security Checklist](https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md) 確認一下有哪些資安注意事項是我們沒有注意到的。
 
 # 延伸閱讀
 

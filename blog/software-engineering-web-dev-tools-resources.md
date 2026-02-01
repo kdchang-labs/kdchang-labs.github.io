@@ -1,5 +1,5 @@
 ---
-title: 常見軟體工程師/網頁開發工具和好用工具整理
+title: 常見軟體工程師/網頁開發工具和產品工具整理
 date: 2024-03-22 11:33:41
 authors: kdchang
 tags:
@@ -11,7 +11,7 @@ tags:
   - 網頁開發
   - 網站開發
   - 網站開發工具
-  - 好用工具
+  - 產品工具
   - 軟體工程
   - 軟體工程師
   - web
@@ -105,7 +105,7 @@ source ~/.zshrc
 
 1. [Free Creative Commons Zero Videos](https://www.pexels.com/search/videos/creative%20commons%20zero/)
 
-## 前端好用工具
+## 前端產品工具
 
 1. [前端開發大全手冊：The Front End Developer/Engineer Handbook 2024](https://frontendmasters.com/guides/front-end-handbook/2024/)
 2. [100 天 CSS 練習挑戰](https://100dayscss.com/)
