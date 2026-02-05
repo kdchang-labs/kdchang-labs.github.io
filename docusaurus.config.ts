@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "KD Labs 產品開發實驗室",
+  title: "KD Labs 產品創作實驗室",
   tagline:
     "軟體工程和產品開發現場觀察：專注於產品設計、軟體開發、產品專案管理與 AI 工具與實作分享",
   favicon: "/img/favicon.ico",

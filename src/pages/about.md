@@ -1,5 +1,5 @@
 ---
-title: KD Labs 產品開發實驗室 | KD Chang 張凱迪
+title: KD Labs 產品創作實驗室 | KD Chang 張凱迪
 description: Hi, 我是 KD Chang 張凱迪，我在這書寫我的軟體開發、程式設計和產品專案管理技術筆記。這裡記錄一個軟體工程師也是一位產品專案經理和教育工作者對軟體工程、Web 前後端程式設計、網頁開發、程式設計、產品專案管理、職涯發展和軟體開發的閱讀思考與觀察，歡迎一起交流討論，讓這個世界更加開放美好！
 image: https://labs.kdchang.net/img/logo.png
 ---
