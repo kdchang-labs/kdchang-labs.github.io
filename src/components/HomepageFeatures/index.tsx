@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
     Png: require("@site/static/img/data-ai-icon.png").default,
     description: (
       <>
-        分享整合 GitHub Copilot 和 Claude Code 等 AI 工具以及 Agentic
+        分享整合 GitHub Copilot 和 Claude Code 等 AI Agent 工具以及 Agentic
         Engineering 開發經驗以及 Python 資料分析與 AI 人工智慧/機器學習應用
       </>
     ),

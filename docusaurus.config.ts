@@ -6,7 +6,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "KD Builder Labs 產品打造實驗室",
-  tagline: "分享用 Builder 思維打造人們想用的產品。保持專注，持續迭代與改進",
+  tagline:
+    "分享用 Builder 思維打造人們想用的產品。保持專注，整合 AI 工作流，持續迭代與改進",
   favicon: "/img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
