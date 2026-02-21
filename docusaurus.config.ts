@@ -107,9 +107,9 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "KD Labs",
+      title: "KD Builder Labs",
       // logo: {
-      //   alt: "KD Labs Logo",
+      //   alt: "KD Builder Labs Logo",
       //   src: "img/logo.png",
       // },
       items: [
@@ -178,7 +178,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} KD Labs. Built with ❤️ in Taiwan.`,
+      copyright: `Copyright © ${new Date().getFullYear()} KD Builder Labs. Built with ❤️ in Taiwan.`,
     },
     prism: {
       theme: prismThemes.github,
