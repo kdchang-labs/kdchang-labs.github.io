@@ -5,9 +5,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "KD Labs 產品創作實驗室",
-  tagline:
-    "軟體工程和產品開發現場觀察：專注於產品設計、軟體開發、產品專案管理與 AI 工具與實作分享",
+  title: "KD Builder Labs 產品打造實驗室",
+  tagline: "分享用 Builder 思維打造人們想用的產品。保持專注，持續迭代與改進",
   favicon: "/img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
