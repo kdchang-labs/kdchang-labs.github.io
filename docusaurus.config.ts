@@ -6,8 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "KD LABs",
-  tagline:
-    "這是一個獨立產品工作室，致力於打造解決人們工作和生活問題的產品，讓這個世界更開放美好",
+  tagline: "致力於打造解決人們工作和生活問題的產品，讓這個世界更開放美好",
   favicon: "/img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
