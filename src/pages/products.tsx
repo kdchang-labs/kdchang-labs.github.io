@@ -124,10 +124,10 @@ export default function Products(): ReactNode {
           <div className="container">
             <div className={styles.ctaBox}>
               <Heading as="h2" className={styles.ctaTitle}>
-                有想法？歡迎與我們聨説
+                有想法？歡迎與我們聯絡
               </Heading>
               <p className={styles.ctaDescription}>
-                如果您有產品合作或其他想法，歡迎與我們聯繫
+                如果您有產品合作或其他想法，歡迎與我們聯絡
               </p>
               <Link to="/about" className={styles.ctaButton}>
                 聯繫我們
