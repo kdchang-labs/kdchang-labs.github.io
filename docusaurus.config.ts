@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "KD LABs | 建構者的實驗室",
+  title: "KD LABs 建構者的實驗室",
   tagline: "致力於打造解決人們工作和生活問題的產品，讓這個世界更開放美好",
   favicon: "/img/favicon.ico",
 
