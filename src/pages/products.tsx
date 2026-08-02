@@ -15,7 +15,7 @@ type Product = {
 
 const products: Product[] = [
   {
-    title: "人生推書店 - LifePicks Bookstore",
+    title: "LifePicks 人生推書店",
     description:
       "專為在人生路上感到徬徨、迷惘或卡關的你打造的虛擬獨立書店。無論你正探索自我、追求成長，這裡都有一本書在等著你。",
     image: "/img/projects/lifepicksbookstore.webp",
