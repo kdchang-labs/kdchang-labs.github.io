@@ -30,7 +30,7 @@
     "message": "About KD LABs"
   },
   "home.about.text": {
-    "message": "KD LABs is an independent product studio founded by KD Chang. We focus on using technology to solve the problems people face at work and in life, and we keep improving our products based on their feedback."
+    "message": "KD LABs is an independent product studio founded by {founder}. We focus on using technology to solve the problems people face at work and in life, and we keep improving our products based on their feedback."
   },
   "home.about.link": {
     "message": "Meet us"

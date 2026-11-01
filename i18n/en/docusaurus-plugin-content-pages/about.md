@@ -9,7 +9,7 @@ description: KD LABs is an independent product studio founded by KD Chang, makin
 
 ## What is KD LABs
 
-KD LABs is an independent product studio founded by KD Chang. We focus on using technology to solve the problems people face at work and in life, and we keep improving our products based on their feedback.
+KD LABs is an independent product studio founded by [KD Chang](https://www.kdchang.com/). We focus on using technology to solve the problems people face at work and in life, and we keep improving our products based on their feedback.
 
 KD has worked as a senior engineer, a founder, a technical project manager and an engineering manager, spending about ten years in software development and seeing projects both succeed and fail. That experience taught him that good products come from understanding what users need, and from putting ideas in front of real users as early as possible.
 

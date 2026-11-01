@@ -87,9 +87,15 @@ export default function Home(): ReactNode {
               </Heading>
               <div>
                 <p className={styles.aboutText}>
-                  <Translate id="home.about.text">
-                    KD LABs 是由 KD Chang
-                    創辦的獨立產品工作室。我們專注用技術解決使用者在工作與生活上的問題，並根據他們的回饋不斷改進。
+                  <Translate
+                    id="home.about.text"
+                    values={{
+                      founder: <Link href="https://www.kdchang.com/">KD Chang</Link>,
+                    }}
+                  >
+                    {
+                      "KD LABs 是由 {founder} 創辦的獨立產品工作室。我們專注用技術解決使用者在工作與生活上的問題，並根據他們的回饋不斷改進。"
+                    }
                   </Translate>
                 </p>
                 <Link to="/about" className={styles.textLink}>

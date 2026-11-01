@@ -198,7 +198,7 @@ const config: Config = {
       ],
       // Same wording as the copyright line in the KD LABs games; the heart is
       // lucide's Heart icon inlined, since this string is rendered as HTML.
-      copyright: `Copyright © ${new Date().getFullYear()} KD LABs. Built with <svg class="copyright-heart" role="img" aria-label="love" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> by <a target="_blank" rel="noopener" href="https://www.kdchang.com">KD Chang</a> in Taiwan.`,
+      copyright: `Copyright © ${new Date().getFullYear()} KD LABs. Built with <svg class="copyright-heart" role="img" aria-label="love" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> by <a target="_blank" rel="noopener" href="https://www.kdchang.com/">KD Chang</a> in Taiwan.`,
     },
     prism: {
       theme: prismThemes.github,
