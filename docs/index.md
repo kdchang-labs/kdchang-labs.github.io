@@ -6,7 +6,4 @@ sidebar_position: 1
 
 # 學習資源
 
-歡迎來到 **KD LABs**：分享 AI 時代軟體工程師產品和工具開發心得分享 🚀
-
-
-
+這裡整理 KD LABs 在產品開發、軟體工程與個人成長上參考的資源，目前包含[推薦書單](/resources/books)。

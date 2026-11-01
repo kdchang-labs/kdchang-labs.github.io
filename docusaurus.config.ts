@@ -8,6 +8,12 @@ const config: Config = {
   title: "KD LABs 建構者的實驗室",
   tagline: "致力於打造解決人們工作和生活問題的產品，讓這個世界更開放美好",
   favicon: "/img/favicon.ico",
+  headTags: [
+    {
+      tagName: "link",
+      attributes: { rel: "apple-touch-icon", href: "/img/apple-touch-icon.png" },
+    },
+  ],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -52,6 +58,7 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           blogSidebarCount: "ALL",
+          blogSidebarTitle: "最新文章",
           postsPerPage: 10,
           feedOptions: {
             type: ["rss", "atom"],
@@ -88,8 +95,9 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    // Replace with your project's social card
-    image: "https://labs.kdchang.com/img/logo.png",
+    // Default social card. Pages get their own card from static/img/og when
+    // one was generated (npm run og); see src/theme/SiteMetadata.
+    image: "/img/og/home.png",
     // colorMode: {
     //   respectPrefersColorScheme: true,
     // },
@@ -107,14 +115,16 @@ const config: Config = {
     },
     navbar: {
       title: "KD LABs",
-      // logo: {
-      //   alt: "KD LABs Logo",
-      //   src: "img/logo.png",
-      // },
+      logo: {
+        alt: "KD LABs",
+        src: "img/icon-192.png",
+        width: 32,
+        height: 32,
+      },
       items: [
         { to: "blog", label: "最新文章", position: "left" },
         { to: "/products", label: "產品介紹", position: "left" },
-        { to: "/about", label: "關於本站", position: "left" },
+        { to: "/about", label: "關於我們", position: "left" },
 
         // {`
         //   type: "docSidebar",
@@ -133,46 +143,41 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "網站",
           items: [
-            {
-              label: "產品介紹",
-              to: "/products",
-            },
-            {
-              label: "熱門文章",
-              to: "/blog/",
-            },
+            { label: "產品介紹", to: "/products" },
+            { label: "最新文章", to: "/blog" },
+            { label: "關於我們", to: "/about" },
           ],
         },
         {
-          title: "Community",
+          title: "社群",
           items: [
             {
-              label: "Facebook Group",
+              label: "Facebook 社團",
               href: "https://facebook.com/groups/kdchang.labs",
             },
             {
-              label: "Follow us on Facebook",
+              label: "Facebook 粉絲專頁",
               href: "https://www.facebook.com/kdchang.labs",
             },
             {
-              label: "Follow us on Instagram",
+              label: "Instagram",
               href: "https://www.instagram.com/kdchang.labs",
             },
           ],
         },
         {
-          title: "More",
+          title: "聯絡",
           items: [
-            {
-              label: "Contact Us",
-              to: "mailto:kdchang.labs@gmail.com",
-            },
+            { label: "聯絡信箱", href: "mailto:kdchang.labs@gmail.com" },
+            { label: "隱私權政策", to: "/privacy" },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} KD LABs. Built with ❤️ by <a target="_blank" href="https://www.kdchang.com">KD Chang</a> in Taiwan.`,
+      // Same wording as the copyright line in the KD LABs games; the heart is
+      // lucide's Heart icon inlined, since this string is rendered as HTML.
+      copyright: `Copyright © ${new Date().getFullYear()} KD LABs. Built with <svg class="copyright-heart" role="img" aria-label="love" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> by <a target="_blank" rel="noopener" href="https://www.kdchang.com">KD Chang</a> in Taiwan.`,
     },
     prism: {
       theme: prismThemes.github,
