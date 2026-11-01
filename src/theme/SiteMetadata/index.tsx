@@ -13,16 +13,22 @@ import { PageMetadata } from "@docusaurus/theme-common";
 import { ogImageFor } from "@site/src/lib/ogImage";
 
 export default function SiteMetadataWrapper(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, i18n } = useDocusaurusContext();
   const { pathname } = useLocation();
-  const path = pathname.startsWith(siteConfig.baseUrl)
-    ? `/${pathname.slice(siteConfig.baseUrl.length)}`
-    : pathname;
+  // siteConfig.baseUrl is the locale's base ("/" or "/en/"); the localized
+  // home page has no trailing slash ("/en"), so match that too.
+  const base = siteConfig.baseUrl.replace(/\/$/, "");
+  const path =
+    pathname === base
+      ? "/"
+      : pathname.startsWith(siteConfig.baseUrl)
+        ? `/${pathname.slice(siteConfig.baseUrl.length)}`
+        : pathname;
 
   return (
     <>
       <SiteMetadata />
-      <PageMetadata image={ogImageFor(path)} />
+      <PageMetadata image={ogImageFor(i18n.currentLocale, path)} />
     </>
   );
 }

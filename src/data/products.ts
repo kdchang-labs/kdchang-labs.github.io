@@ -3,6 +3,11 @@
  * Copy is written from each product's own site and store listing; keep it
  * factual (what it does, where it runs) and update it when a product ships
  * a new platform.
+ *
+ * The top-level text is Traditional Chinese; `en` holds the English version.
+ * Components read the data through the locale-aware helpers at the bottom
+ * (localizedCategories / localizedProducts / platformLabelsFor), never the raw
+ * arrays, so both languages stay in one place.
  */
 
 export type Category = "product" | "game" | "tool";
@@ -11,7 +16,7 @@ export type Platform = "web" | "chrome" | "ios" | "android";
 
 export type PlatformStatus = {
   platform: Platform;
-  /** Not yet in the store. Shown as "即將推出". */
+  /** Not yet in the store. Shown as "即將推出" / "coming soon". */
   upcoming?: boolean;
 };
 
@@ -25,39 +30,74 @@ export type Product = {
   url: string;
   category: Category;
   platforms: PlatformStatus[];
+  en: {
+    name: string;
+    summary: string;
+    description: string;
+    /** English page of the product, when it has its own URL. */
+    url?: string;
+  };
 };
 
-export const categories: {
+export type Locale = "zh-Hant" | "en";
+
+type CategoryInfo = {
   id: Category;
   name: string;
   description: string;
-}[] = [
+};
+
+const categories: (CategoryInfo & {
+  en: Omit<CategoryInfo, "id">;
+})[] = [
   {
     id: "product",
     name: "產品",
     description: "陪你閱讀、學習與累積職涯能力的 App 與服務。",
+    en: {
+      name: "Products",
+      description:
+        "Apps and services that help you read, learn and build your career.",
+    },
   },
   {
     id: "game",
     name: "遊戲",
     description:
       "「物語」系列經營策略遊戲。在瀏覽器裡經營一間店、一家公司、一場選戰或一支球隊。",
+    en: {
+      name: "Games",
+      description:
+        "The Monogatari series of management strategy games. Run a shop, a company, a campaign or a scouting department, right in your browser.",
+    },
   },
   {
     id: "tool",
     name: "工具",
     description: "裝在瀏覽器裡、處理日常工作的小工具。",
+    en: {
+      name: "Tools",
+      description: "Small browser tools for everyday work.",
+    },
   },
 ];
 
-export const platformLabels: Record<Platform, string> = {
-  web: "網頁",
-  chrome: "Chrome 擴充功能",
-  ios: "iOS",
-  android: "Android",
+const platformLabels: Record<Locale, Record<Platform, string>> = {
+  "zh-Hant": {
+    web: "網頁",
+    chrome: "Chrome 擴充功能",
+    ios: "iOS",
+    android: "Android",
+  },
+  en: {
+    web: "Web",
+    chrome: "Chrome extension",
+    ios: "iOS",
+    android: "Android",
+  },
 };
 
-export const products: Product[] = [
+const products: Product[] = [
   {
     id: "lifepicks",
     name: "LifePicks 人生推書店",
@@ -73,6 +113,12 @@ export const products: Product[] = [
       { platform: "android" },
       { platform: "chrome" },
     ],
+    en: {
+      name: "LifePicks",
+      summary: "An online indie bookstore that picks books by life theme",
+      description:
+        "Spin the gacha machine to draw a book from six themes: self-discovery, work and career, relationships, learning and growth, health and wellbeing, and money mindset. Every book comes with key takeaways and an action plan, and you can add it to your shelf, schedule practice and track your reading.",
+    },
   },
   {
     id: "careertags",
@@ -88,6 +134,12 @@ export const products: Product[] = [
       { platform: "ios", upcoming: true },
       { platform: "android", upcoming: true },
     ],
+    en: {
+      name: "CareerTags",
+      summary: "Turn soft skills into career results, 15 minutes a day",
+      description:
+        "Pick your career stage and target role to see your skill gaps, with recommended videos and podcasts that come with key summaries. Schedule practice from your action plan, keep a practice journal, then turn it into STAR stories you can use in interviews and reviews.",
+    },
   },
   {
     id: "certgym",
@@ -102,6 +154,12 @@ export const products: Product[] = [
       { platform: "ios", upcoming: true },
       { platform: "android", upcoming: true },
     ],
+    en: {
+      name: "CertGym",
+      summary: "A practice-question app for certification exams",
+      description:
+        "Key concepts organized by the official exam outline, with past exam questions and original practice questions. Questions you get wrong go back to your review list automatically, and flashcards and a daily question let you study in spare moments. Free to start, no account needed.",
+    },
   },
   {
     id: "teabarstory",
@@ -113,6 +171,13 @@ export const products: Product[] = [
     url: "https://www.teabarstory.com",
     category: "game",
     platforms: [{ platform: "web" }],
+    en: {
+      name: "Tea Bar Story",
+      summary: "From a night market cart to a boba empire",
+      description:
+        "Develop recipes, hire staff and keep up with each week's trends. Each of the five shops has a challenge week to clear on the way to turning one night market cart into a boba brand with lines around the world.",
+      url: "https://www.teabarstory.com/en",
+    },
   },
   {
     id: "waytounicorn",
@@ -124,6 +189,13 @@ export const products: Product[] = [
     url: "https://www.waytounicorn.com",
     category: "game",
     platforms: [{ platform: "web" }],
+    en: {
+      name: "Way to Unicorn",
+      summary: "From a garage startup to a billion-dollar valuation",
+      description:
+        "Start in your parents' garage. Build the product, hire the team and win over investors, and reach a US$1 billion valuation before the cash runs out.",
+      url: "https://www.waytounicorn.com/en",
+    },
   },
   {
     id: "90daystocityhall",
@@ -135,6 +207,13 @@ export const products: Product[] = [
     url: "https://www.90daystocityhall.com",
     category: "game",
     platforms: [{ platform: "web" }],
+    en: {
+      name: "90 Days to City Hall",
+      summary: "A 90-day countdown to the mayoral election",
+      description:
+        "Plan your schedule, build a campaign team, choose your campaign strategy and survive the surprises to win New Harbor City on election night. Winning unlocks a four-year term in governing mode, and a shot at re-election.",
+      url: "https://www.90daystocityhall.com/en",
+    },
   },
   {
     id: "nextbaseballace",
@@ -146,6 +225,13 @@ export const products: Product[] = [
     url: "https://www.nextbaseballace.com",
     category: "game",
     platforms: [{ platform: "web" }],
+    en: {
+      name: "Next Baseball Ace",
+      summary: "Sixteen weeks to the pro baseball draft",
+      description:
+        "As a pro team's new scout, travel to ballparks across the island to watch games, run tryouts and make home visits. Survive three scouting meetings and pick the next ace at the draft. Whether you read them right, you'll find out three years later.",
+      url: "https://www.nextbaseballace.com/en",
+    },
   },
   {
     id: "happyprompt",
@@ -157,8 +243,44 @@ export const products: Product[] = [
     url: "https://www.happyprompt.net/",
     category: "tool",
     platforms: [{ platform: "chrome" }],
+    en: {
+      name: "HappyPrompt",
+      summary: "An AI prompt manager",
+      description:
+        "Select text on any page to save it as a prompt, then insert it into ChatGPT, Claude or Gemini in one click. Includes a prompt library for marketing, HR, product management, engineering and more. Your data stays in your browser: no sign-in needed, and you can export a backup.",
+    },
   },
 ];
 
-export const productsIn = (category: Category) =>
-  products.filter((product) => product.category === category);
+/** Product as shown on the page: text and URL already in one language. */
+export type LocalizedProduct = Omit<Product, "en">;
+
+const asLocale = (locale: string): Locale =>
+  locale === "en" ? "en" : "zh-Hant";
+
+export function localizedCategories(locale: string): CategoryInfo[] {
+  return categories.map(({ en, ...zh }) =>
+    asLocale(locale) === "en" ? { ...zh, ...en } : zh,
+  );
+}
+
+export function localizedProducts(locale: string): LocalizedProduct[] {
+  return products.map(({ en, ...zh }) =>
+    asLocale(locale) === "en"
+      ? { ...zh, ...en, url: en.url ?? zh.url }
+      : zh,
+  );
+}
+
+export function productsIn(
+  category: Category,
+  locale: string,
+): LocalizedProduct[] {
+  return localizedProducts(locale).filter(
+    (product) => product.category === category,
+  );
+}
+
+export function platformLabelsFor(locale: string): Record<Platform, string> {
+  return platformLabels[asLocale(locale)];
+}

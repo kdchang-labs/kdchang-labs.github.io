@@ -1,0 +1,46 @@
+{
+  "link.title.網站": {
+    "message": "Site",
+    "description": "The title of the footer links column with title=網站 in the footer"
+  },
+  "link.title.社群": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=社群 in the footer"
+  },
+  "link.title.聯絡": {
+    "message": "Contact",
+    "description": "The title of the footer links column with title=聯絡 in the footer"
+  },
+  "link.item.label.產品介紹": {
+    "message": "Products",
+    "description": "The label of footer link with label=產品介紹 linking to /products"
+  },
+  "link.item.label.最新文章": {
+    "message": "Blog",
+    "description": "The label of footer link with label=最新文章 linking to /blog"
+  },
+  "link.item.label.關於我們": {
+    "message": "About",
+    "description": "The label of footer link with label=關於我們 linking to /about"
+  },
+  "link.item.label.Facebook 社團": {
+    "message": "Facebook Group",
+    "description": "The label of footer link with label=Facebook 社團 linking to https://facebook.com/groups/kdchang.labs"
+  },
+  "link.item.label.Facebook 粉絲專頁": {
+    "message": "Facebook Page",
+    "description": "The label of footer link with label=Facebook 粉絲專頁 linking to https://www.facebook.com/kdchang.labs"
+  },
+  "link.item.label.Instagram": {
+    "message": "Instagram",
+    "description": "The label of footer link with label=Instagram linking to https://www.instagram.com/kdchang.labs"
+  },
+  "link.item.label.聯絡信箱": {
+    "message": "Email",
+    "description": "The label of footer link with label=聯絡信箱 linking to mailto:kdchang.labs@gmail.com"
+  },
+  "link.item.label.隱私權政策": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=隱私權政策 linking to /privacy"
+  }
+}

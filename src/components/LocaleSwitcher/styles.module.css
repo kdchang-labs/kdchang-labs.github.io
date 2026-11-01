@@ -1,0 +1,76 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--kd-border-strong);
+  border-radius: var(--ifm-global-radius);
+  color: var(--kd-text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.toggle:hover {
+  border-color: var(--kd-text-subtle);
+  color: var(--kd-text);
+}
+
+.chevron {
+  transition: transform 0.15s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 2;
+  min-width: 100%;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  text-align: left;
+  background: var(--kd-surface);
+  border: 1px solid var(--kd-border-strong);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.menu li {
+  margin: 0;
+}
+
+.item {
+  display: block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  color: var(--kd-text-muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.item:hover {
+  background: var(--kd-surface-2);
+  color: var(--kd-text);
+  text-decoration: none;
+}
+
+/* The palette is monochrome, so the current locale is marked by weight. */
+.current {
+  color: var(--kd-text);
+  font-weight: 600;
+}

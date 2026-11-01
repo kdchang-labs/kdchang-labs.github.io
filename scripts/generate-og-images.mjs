@@ -7,8 +7,8 @@
  *
  *   npm run og        # builds the site, generates cards, rebuilds
  *
- * Output: static/img/og/<slug>.png plus static/img/og/manifest.json, which
- * src/lib/ogImage.ts reads. The PNGs are committed, so deploys never need
+ * Output: static/img/og/<locale>/<slug>.png plus static/img/og/manifest.json,
+ * which src/lib/ogImage.ts reads. The PNGs are committed, so deploys never need
  * Chrome. Run it again after adding pages or changing titles.
  *
  * Needs Google Chrome; set CHROME_PATH if it is not in the default location.
@@ -30,16 +30,35 @@ const CHROME =
 
 const SITE = "KD LABs";
 const HOST = "labs.kdchang.com";
-const SECTIONS = {
-  blog: "文章",
-  resources: "學習資源",
-  products: "產品介紹",
-  about: "關於我們",
-};
-const HOME = {
-  eyebrow: "獨立產品工作室",
-  // "\n" sets the line break; the card renders the title with pre-line.
-  title: "從一個具體的問題開始，\n做出每天用得上的產品",
+
+// "\n" in a home title sets the line break; the card renders it with pre-line.
+const LOCALES = {
+  "zh-Hant": {
+    dir: buildDir,
+    sections: {
+      blog: "文章",
+      resources: "學習資源",
+      products: "產品介紹",
+      about: "關於我們",
+    },
+    home: {
+      eyebrow: "獨立產品工作室",
+      title: "從一個具體的問題開始，\n做出每天用得上的產品",
+    },
+  },
+  en: {
+    dir: path.join(buildDir, "en"),
+    sections: {
+      blog: "Blog",
+      resources: "Resources",
+      products: "Products",
+      about: "About",
+    },
+    home: {
+      eyebrow: "Independent product studio",
+      title: "Start with one real problem,\nbuild products people use every day",
+    },
+  },
 };
 
 /** Listing pages that only repeat other pages; they keep the default card. */
@@ -50,17 +69,18 @@ function ogSlug(p) {
   return clean === "" ? "home" : clean.slice(1).replace(/\//g, "--");
 }
 
-function htmlFiles(dir) {
+function htmlFiles(dir, skipDirs) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     const full = path.join(dir, e.name);
-    if (e.isDirectory()) return htmlFiles(full);
+    if (e.isDirectory())
+      return skipDirs.includes(full) ? [] : htmlFiles(full, skipDirs);
     return e.name.endsWith(".html") ? [full] : [];
   });
 }
 
 /** build/foo/bar.html -> /foo/bar, build/foo/index.html -> /foo */
-function pagePath(file) {
-  const rel = path.relative(buildDir, file).replace(/\\/g, "/");
+function pagePath(file, dir) {
+  const rel = path.relative(dir, file).replace(/\\/g, "/");
   return `/${rel.replace(/(^|\/)index\.html$/, "").replace(/\.html$/, "")}`;
 }
 
@@ -82,9 +102,9 @@ function meta(html, attr, name) {
   return m ? decode(m[1]) : "";
 }
 
-function card({ eyebrow, title, description }) {
+function card({ eyebrow, title, description, lang }) {
   return `<!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><style>
+<html lang="${lang}"><head><meta charset="utf-8"><style>
   * { margin: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
   body {
@@ -125,60 +145,70 @@ if (!fs.existsSync(buildDir)) {
 }
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "og-"));
-for (const f of fs.readdirSync(outDir, { withFileTypes: true })) {
-  if (f.isFile() && f.name.endsWith(".png")) fs.rmSync(path.join(outDir, f.name));
-}
-fs.mkdirSync(outDir, { recursive: true });
-const manifest = [];
+const manifest = {};
 
-// Page titles are "<page> | <site title>"; strip the site title exactly.
-const siteTitle = decode(
-  fs
-    .readFileSync(path.join(buildDir, "index.html"), "utf8")
-    .match(/<title[^>]*>([^<]*)<\/title>/)?.[1] ?? "",
-);
+for (const [locale, cfg] of Object.entries(LOCALES)) {
+  // build/en/ sits inside build/; keep it out of the zh-Hant pass.
+  const otherLocaleDirs = Object.values(LOCALES)
+    .map((c) => c.dir)
+    .filter((d) => d !== cfg.dir && d.startsWith(cfg.dir));
+  const target = path.join(outDir, locale);
+  fs.rmSync(target, { recursive: true, force: true });
+  fs.mkdirSync(target, { recursive: true });
+  manifest[locale] = [];
 
-for (const file of htmlFiles(buildDir).sort()) {
-  const pagePathname = pagePath(file);
-  if (SKIP.test(pagePathname.slice(1))) continue;
-
-  const html = fs.readFileSync(file, "utf8");
-  const slug = ogSlug(pagePathname);
-  const section = pagePathname.split("/")[1];
-  const fullTitle = decode(html.match(/<title[^>]*>([^<]*)<\/title>/)?.[1] ?? "");
-  const description = meta(html, "name", "description");
-
-  let data;
-  if (slug === "home") {
-    data = { ...HOME, description };
-  } else {
-    const suffix = ` | ${siteTitle}`;
-    const title = fullTitle.endsWith(suffix)
-      ? fullTitle.slice(0, -suffix.length)
-      : fullTitle;
-    data = { eyebrow: SECTIONS[section] ?? "", title, description };
-  }
-  if (!data.title) continue;
-
-  const htmlFile = path.join(tmp, `${slug}.html`);
-  fs.writeFileSync(htmlFile, card(data));
-  const png = path.join(outDir, `${slug}.png`);
-  execFileSync(
-    CHROME,
-    [
-      "--headless",
-      "--disable-gpu",
-      "--hide-scrollbars",
-      "--force-device-scale-factor=1",
-      "--allow-file-access-from-files",
-      "--window-size=1200,630",
-      `--screenshot=${png}`,
-      `file://${htmlFile}`,
-    ],
-    { stdio: "ignore" },
+  // Page titles are "<page> | <site title>"; strip the site title exactly,
+  // since it may itself contain " | ".
+  const siteTitle = decode(
+    fs
+      .readFileSync(path.join(cfg.dir, "index.html"), "utf8")
+      .match(/<title[^>]*>([^<]*)<\/title>/)?.[1] ?? "",
   );
-  manifest.push(slug);
-  console.log(`${pagePathname} -> ${path.relative(root, png)}`);
+
+  for (const file of htmlFiles(cfg.dir, otherLocaleDirs).sort()) {
+    const pagePathname = pagePath(file, cfg.dir);
+    if (SKIP.test(pagePathname.slice(1))) continue;
+
+    const html = fs.readFileSync(file, "utf8");
+    const slug = ogSlug(pagePathname);
+    const section = pagePathname.split("/")[1];
+    const fullTitle = decode(
+      html.match(/<title[^>]*>([^<]*)<\/title>/)?.[1] ?? "",
+    );
+    const description = meta(html, "name", "description");
+
+    let data;
+    if (slug === "home") {
+      data = { ...cfg.home, description };
+    } else {
+      const suffix = ` | ${siteTitle}`;
+      const title = fullTitle.endsWith(suffix)
+        ? fullTitle.slice(0, -suffix.length)
+        : fullTitle;
+      data = { eyebrow: cfg.sections[section] ?? "", title, description };
+    }
+    if (!data.title) continue;
+
+    const htmlFile = path.join(tmp, `${locale}-${slug}.html`);
+    fs.writeFileSync(htmlFile, card({ ...data, lang: locale }));
+    const png = path.join(target, `${slug}.png`);
+    execFileSync(
+      CHROME,
+      [
+        "--headless",
+        "--disable-gpu",
+        "--hide-scrollbars",
+        "--force-device-scale-factor=1",
+        "--allow-file-access-from-files",
+        "--window-size=1200,630",
+        `--screenshot=${png}`,
+        `file://${htmlFile}`,
+      ],
+      { stdio: "ignore" },
+    );
+    manifest[locale].push(slug);
+    console.log(`${locale} ${pagePathname} -> ${path.relative(root, png)}`);
+  }
 }
 
 fs.writeFileSync(
@@ -186,4 +216,6 @@ fs.writeFileSync(
   `${JSON.stringify(manifest, null, 2)}\n`,
 );
 fs.rmSync(tmp, { recursive: true, force: true });
-console.log(`\n${manifest.length} cards written. Rebuild to use them.`);
+console.log(
+  `\n${Object.values(manifest).flat().length} cards written. Rebuild to use them.`,
+);

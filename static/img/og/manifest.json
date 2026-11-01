@@ -1,12 +1,26 @@
-[
-  "about",
-  "blog",
-  "blog--introducing-kd-labs",
-  "blog--monogatari-series",
-  "home",
-  "privacy",
-  "products",
-  "resources",
-  "resources--books",
-  "resources--books--reading-list"
-]
+{
+  "zh-Hant": [
+    "about",
+    "blog",
+    "blog--introducing-kd-labs",
+    "blog--monogatari-series",
+    "home",
+    "privacy",
+    "products",
+    "resources",
+    "resources--books",
+    "resources--books--reading-list"
+  ],
+  "en": [
+    "about",
+    "blog",
+    "blog--introducing-kd-labs",
+    "blog--monogatari-series",
+    "home",
+    "privacy",
+    "products",
+    "resources",
+    "resources--books",
+    "resources--books--reading-list"
+  ]
+}

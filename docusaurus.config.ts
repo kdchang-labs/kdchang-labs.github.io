@@ -4,9 +4,17 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+// Docusaurus runs this config once per locale, so site-level metadata that
+// cannot go through the i18n JSON files (title / tagline / social card) is
+// switched here instead. Same approach as ai.kdchang.com.
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? "zh-Hant";
+const isEn = currentLocale === "en";
+
 const config: Config = {
-  title: "KD LABs 建構者的實驗室",
-  tagline: "致力於打造解決人們工作和生活問題的產品，讓這個世界更開放美好",
+  title: isEn ? "KD LABs | A Lab for Builders" : "KD LABs 建構者的實驗室",
+  tagline: isEn
+    ? "Building products that solve real problems at work and in life, for a more open and better world."
+    : "致力於打造解決人們工作和生活問題的產品，讓這個世界更開放美好",
   favicon: "/img/favicon.ico",
   headTags: [
     {
@@ -33,12 +41,23 @@ const config: Config = {
   projectName: "kdchang-labs.github.io", // repo
   onBrokenLinks: "throw",
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Traditional Chinese is served at /, English at /en/. Translations live in
+  // i18n/en/ (pages, blog posts, docs, and the JSON files for UI strings).
   i18n: {
     defaultLocale: "zh-Hant",
-    locales: ["zh-Hant"],
+    locales: ["zh-Hant", "en"],
+    localeConfigs: {
+      "zh-Hant": {
+        label: "繁體中文",
+        htmlLang: "zh-Hant-TW",
+        direction: "ltr",
+      },
+      en: {
+        label: "English",
+        htmlLang: "en-US",
+        direction: "ltr",
+      },
+    },
   },
 
   presets: [
@@ -97,7 +116,7 @@ const config: Config = {
   themeConfig: {
     // Default social card. Pages get their own card from static/img/og when
     // one was generated (npm run og); see src/theme/SiteMetadata.
-    image: "/img/og/home.png",
+    image: isEn ? "/img/og/en/home.png" : "/img/og/zh-Hant/home.png",
     // colorMode: {
     //   respectPrefersColorScheme: true,
     // },

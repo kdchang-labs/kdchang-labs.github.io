@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.resourceSidebar.category.推薦書籍": {
+    "message": "Recommended Books",
+    "description": "The label for category '推薦書籍' in sidebar 'resourceSidebar'"
+  }
+}

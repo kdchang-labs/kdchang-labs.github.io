@@ -1,11 +1,13 @@
 import type { ReactNode } from "react";
 import Link from "@docusaurus/Link";
+import Translate from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Heading from "@theme/Heading";
 import { ArrowUpRight, Gamepad2, Package, Wrench } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { PlatformList } from "@site/src/components/ProductCard";
 import {
-  categories,
+  localizedCategories,
   productsIn,
   type Category,
 } from "@site/src/data/products";
@@ -18,15 +20,18 @@ const categoryIcons: Record<Category, LucideIcon> = {
 };
 
 export default function HomepageFeatures(): ReactNode {
+  const { i18n } = useDocusaurusContext();
+  const locale = i18n.currentLocale;
+  const categories = localizedCategories(locale);
   return (
     <section className={styles.section}>
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" className={styles.title}>
-            產品、遊戲與工具
+            <Translate id="home.features.title">產品、遊戲與工具</Translate>
           </Heading>
           <Link to="/products" className={styles.all}>
-            完整產品介紹
+            <Translate id="home.features.all">完整產品介紹</Translate>
           </Link>
         </div>
         <div className={styles.columns}>
@@ -46,7 +51,7 @@ export default function HomepageFeatures(): ReactNode {
                   {category.description}
                 </p>
                 <ul className={styles.list}>
-                  {productsIn(category.id).map((product) => (
+                  {productsIn(category.id, locale).map((product) => (
                     <li key={product.id}>
                       <Link to={product.url} className={styles.item}>
                         <span className={styles.itemName}>

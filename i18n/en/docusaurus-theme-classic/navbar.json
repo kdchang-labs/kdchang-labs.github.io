@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "KD LABs",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "KD LABs",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.最新文章": {
+    "message": "Blog",
+    "description": "Navbar item with label 最新文章"
+  },
+  "item.label.產品介紹": {
+    "message": "Products",
+    "description": "Navbar item with label 產品介紹"
+  },
+  "item.label.關於我們": {
+    "message": "About",
+    "description": "Navbar item with label 關於我們"
+  }
+}
