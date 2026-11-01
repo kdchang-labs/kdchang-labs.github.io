@@ -144,6 +144,7 @@ const config: Config = {
         { to: "blog", label: "最新文章", position: "left" },
         { to: "/products", label: "產品介紹", position: "left" },
         { to: "/about", label: "關於我們", position: "left" },
+        { href: "https://portaly.cc/kdchang.labs/support", label: "贊助我喝杯咖啡", position: "left" },
 
         // {`
         //   type: "docSidebar",
@@ -167,6 +168,7 @@ const config: Config = {
             { label: "產品介紹", to: "/products" },
             { label: "最新文章", to: "/blog" },
             { label: "關於我們", to: "/about" },
+            { label: "贊助我喝杯咖啡", href: "https://portaly.cc/kdchang.labs/support" },
           ],
         },
         {

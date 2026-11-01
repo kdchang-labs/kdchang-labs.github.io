@@ -42,6 +42,10 @@ The Monogatari series of management strategy games. They run in your browser and
 - **Respect your data**: If data can stay on your device, we don't upload it. If a feature can work without an account, we don't ask you to sign in.
 - **Keep maintaining after launch**: After a product ships, we keep fixing and updating it based on feedback, and we share how we build things on the [blog](/blog).
 
+## Support us
+
+If our products have helped you, you can buy us a coffee on [Portaly](https://portaly.cc/kdchang.labs/support). Thank you for your support!
+
 ## Contact us
 
 For partnerships, questions about a product or feature requests, get in touch:

@@ -23,6 +23,10 @@
     "message": "About",
     "description": "The label of footer link with label=關於我們 linking to /about"
   },
+  "link.item.label.贊助我喝杯咖啡": {
+    "message": "Buy Me a Coffee",
+    "description": "The label of footer link with label=贊助我喝杯咖啡 linking to https://portaly.cc/kdchang.labs/support"
+  },
   "link.item.label.Facebook 社團": {
     "message": "Facebook Group",
     "description": "The label of footer link with label=Facebook 社團 linking to https://facebook.com/groups/kdchang.labs"
