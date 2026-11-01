@@ -63,8 +63,8 @@ export default function Home(): ReactNode {
               </Heading>
               <div>
                 <p className={styles.aboutText}>
-                  KD LABs 是 KD Chang
-                  的獨立產品工作室。我們不追求規模，每個產品上線後都會持續維護，依使用者的回饋更新。
+                  KD LABs 是由 KD Chang
+                  創辦的獨立產品工作室。我們專注用技術解決使用者在工作與生活上的問題，並根據他們的回饋不斷改進。
                 </p>
                 <Link to="/about" className={styles.textLink}>
                   認識我們
