@@ -53,11 +53,11 @@ const categories: (CategoryInfo & {
   {
     id: "product",
     name: "產品",
-    description: "陪你閱讀、學習與累積職涯能力的 App 與服務。",
+    description: "陪你閱讀、學習、旅行與累積職涯能力的 App 與服務。",
     en: {
       name: "Products",
       description:
-        "Apps and services that help you read, learn and build your career.",
+        "Apps and services that help you read, learn, travel and build your career.",
     },
   },
   {
@@ -159,6 +159,27 @@ const products: Product[] = [
       summary: "A practice-question app for certification exams",
       description:
         "Key concepts organized by the official exam outline, with past exam questions and original practice questions. Questions you get wrong go back to your review list automatically, and flashcards and a daily question let you study in spare moments. Free to start, no account needed.",
+    },
+  },
+  {
+    id: "explorestamp",
+    name: "ExploreStamp 探索印記",
+    summary: "把每一次旅行，蓋成一枚印章",
+    description:
+      "收錄臺灣、日本、韓國、歐美等 15 個國家與地區的景點，整理成主題路線。人到現場用定位打卡，才能蓋下印章，還能把照片和印章做成明信片。景點資料隨 App 安裝、離線可用，不用登入，打卡紀錄與照片預設留在手機。",
+    image: "/img/projects/explorestamp.webp",
+    url: "https://www.explorestamp.com/",
+    category: "product",
+    platforms: [
+      { platform: "ios", upcoming: true },
+      { platform: "android", upcoming: true },
+    ],
+    en: {
+      name: "ExploreStamp",
+      summary: "Turn every trip into a stamp",
+      description:
+        "Sights across 15 countries and regions, including Taiwan, Japan, Korea, Europe and North America, organized into themed routes. Check in by location at the spot itself to collect its stamp, then turn your photo and stamp into a postcard. Sight data ships with the app and works offline, no sign-in is needed, and your check-ins and photos stay on your phone by default.",
+      url: "https://www.explorestamp.com/en/",
     },
   },
   {

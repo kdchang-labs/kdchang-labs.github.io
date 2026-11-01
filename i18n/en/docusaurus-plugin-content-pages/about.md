@@ -1,6 +1,6 @@
 ---
 title: About
-description: KD LABs is an independent product studio founded by KD Chang, making apps, browser extensions and web games — LifePicks, CareerTags, CertGym, the Monogatari series of management strategy games, and HappyPrompt.
+description: KD LABs is an independent product studio founded by KD Chang, making apps, browser extensions and web games — LifePicks, CareerTags, CertGym, ExploreStamp, the Monogatari series of management strategy games, and HappyPrompt.
 ---
 
 # About
@@ -22,6 +22,7 @@ That's why KD LABs products are small, but each one starts from a real problem: 
 - **[LifePicks](https://www.lifepicksbookstore.com/)**: An online indie bookstore that picks books by life theme. Spin the gacha machine to draw a book from six themes, each with key takeaways and an action plan, then add it to your shelf and track your reading. Available on the web, iOS, Android and as a Chrome extension.
 - **[CareerTags](https://www.careertags.com/)**: Find your skill gaps based on your career goals, learn from curated videos and podcasts, then turn soft skills into visible results through practice, a practice journal and STAR stories. The Chrome extension is available now; iOS and Android apps are coming soon.
 - **[CertGym](https://www.certgym.com/)**: A certification exam prep app with key concepts organized by the official exam outline, past exam questions, flashcards and a review list for questions you got wrong. iOS and Android versions are coming soon.
+- **[ExploreStamp](https://www.explorestamp.com/en/)**: A stamp-collecting travel app. Explore sights through themed routes, check in by location at the spot to collect its stamp, and turn it into a postcard. No sign-in needed and works offline. iOS and Android versions are coming soon.
 
 ### Games
 
