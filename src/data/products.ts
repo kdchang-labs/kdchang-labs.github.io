@@ -30,6 +30,8 @@ export type Product = {
   url: string;
   category: Category;
   platforms: PlatformStatus[];
+  /** Temporarily left off the site (homepage, /products). Remove to show again. */
+  hidden?: boolean;
   en: {
     name: string;
     summary: string;
@@ -150,6 +152,7 @@ const products: Product[] = [
     image: "/img/projects/certgym.webp",
     url: "https://www.certgym.com/",
     category: "product",
+    hidden: true,
     platforms: [
       { platform: "ios", upcoming: true },
       { platform: "android", upcoming: true },
@@ -286,11 +289,13 @@ export function localizedCategories(locale: string): CategoryInfo[] {
 }
 
 export function localizedProducts(locale: string): LocalizedProduct[] {
-  return products.map(({ en, ...zh }) =>
-    asLocale(locale) === "en"
-      ? { ...zh, ...en, url: en.url ?? zh.url }
-      : zh,
-  );
+  return products
+    .filter((product) => !product.hidden)
+    .map(({ en, ...zh }) =>
+      asLocale(locale) === "en"
+        ? { ...zh, ...en, url: en.url ?? zh.url }
+        : zh,
+    );
 }
 
 export function productsIn(

@@ -40,7 +40,7 @@
     "description": "Title of the products page"
   },
   "products.meta.description": {
-    "message": "Products, games and tools from KD LABs: LifePicks, CareerTags, CertGym, the Monogatari series of management strategy games, and HappyPrompt.",
+    "message": "Products, games and tools from KD LABs: LifePicks, CareerTags, ExploreStamp, the Monogatari series of management strategy games, and HappyPrompt.",
     "description": "Meta description of the products page"
   },
   "products.header.eyebrow": {

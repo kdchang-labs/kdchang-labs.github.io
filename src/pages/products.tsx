@@ -23,7 +23,7 @@ export default function Products(): ReactNode {
       description={translate({
         id: "products.meta.description",
         message:
-          "KD LABs 的產品、遊戲與工具：LifePicks 人生推書店、CareerTags 職涯書籤、CertGym 證照道館、物語系列經營策略遊戲與 HappyPrompt。",
+          "KD LABs 的產品、遊戲與工具：LifePicks 人生推書店、CareerTags 職涯書籤、ExploreStamp 探索印記、物語系列經營策略遊戲與 HappyPrompt。",
         description: "Meta description of the products page",
       })}
     >

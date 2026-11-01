@@ -1,6 +1,6 @@
 ---
 title: 關於我們
-description: KD LABs 是由 KD Chang 創辦的獨立產品工作室，做 App、瀏覽器擴充功能與網頁遊戲：LifePicks 人生推書店、CareerTags 職涯書籤、CertGym 證照道館、ExploreStamp 探索印記、物語系列經營策略遊戲與 HappyPrompt。
+description: KD LABs 是由 KD Chang 創辦的獨立產品工作室，做 App、瀏覽器擴充功能與網頁遊戲：LifePicks 人生推書店、CareerTags 職涯書籤、ExploreStamp 探索印記、物語系列經營策略遊戲與 HappyPrompt。
 ---
 
 # 關於我們
@@ -13,7 +13,7 @@ KD LABs 是由 [KD Chang](https://www.kdchang.com/) 創辦的獨立產品工作�
 
 KD 做過資深工程師、創業者、技術專案經理和工程主管，在軟體開發領域待了大約十年，成功和失敗的專案都經歷過。這些經驗讓他相信：好產品來自對使用者需求的理解，以及盡快把想法放到真實使用者面前驗證。
 
-所以 KD LABs 的產品規模都不大，但每一個都從一個具體的問題出發：想讀書卻不知道從哪一本開始、學了職場技能卻沒有機會練、準備證照時同樣的題目一錯再錯、好用的 AI 提示詞存了卻找不到。
+所以 KD LABs 的產品規模都不大，但每一個都從一個具體的問題出發：想讀書卻不知道從哪一本開始、學了職場技能卻沒有機會練、好用的 AI 提示詞存了卻找不到。
 
 ## 我們做的產品
 
@@ -21,7 +21,6 @@ KD 做過資深工程師、創業者、技術專案經理和工程主管，在�
 
 - **[LifePicks 人生推書店](https://www.lifepicksbookstore.com/)**：依人生課題選書的線上獨立書店。轉扭蛋從六個主題抽一本書，附重點書摘與行動方案，可以收進書櫃、記錄閱讀進度。提供網頁、iOS、Android App 與 Chrome 擴充功能。
 - **[CareerTags 職涯書籤](https://www.careertags.com/)**：依職涯目標找出技能缺口，從精選影片與 Podcast 學習，再透過練習、實踐日誌與 STAR 故事，把軟實力累積成看得見的成果。Chrome 擴充功能已上架，iOS 與 Android App 即將推出。
-- **[CertGym 證照道館](https://www.certgym.com/)**：依官方考綱整理知識點，搭配歷屆試題、閃卡與錯題複習的證照備考 App，iOS 與 Android 版即將上架。
 - **[ExploreStamp 探索印記](https://www.explorestamp.com/)**：把旅行蓋成印章的集章 App。依主題路線探索各國景點，人到現場定位打卡才能蓋章，還能做成明信片。不用登入、離線可用，iOS 與 Android 版即將上架。
 
 ### 遊戲
