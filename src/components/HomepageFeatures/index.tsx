@@ -32,13 +32,13 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "AI 應用",
-    icon: "🤖",
+    title: "經營策略遊戲",
+    icon: "🎮",
     Png: require("@site/static/img/agile-icon.png").default,
     description: (
       <>
-        運用人工智慧技術，解決過去難以解決的問題，創造新的可能性。讓 AI
-        成為人們的得力助手，提升工作效率與生活品質。
+        把開店、創業、選舉、選秀這些真實世界的挑戰，做成打開瀏覽器就能玩的 3D
+        經營策略遊戲。在有限的資源裡做取捨，每一局都是新的開局。
       </>
     ),
   },

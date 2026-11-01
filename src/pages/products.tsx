@@ -11,9 +11,70 @@ type Product = {
   link: string;
   status: "active" | "coming-soon" | "beta";
   tags: string[];
+  category: Category;
 };
 
+type Category = "product" | "game" | "tool";
+
+const categories: { id: Category; title: string; subtitle: string }[] = [
+  {
+    id: "product",
+    title: "產品",
+    subtitle: "陪你閱讀、學習與成長的服務",
+  },
+  {
+    id: "game",
+    title: "遊戲",
+    subtitle: "打開瀏覽器就能玩的 3D 經營策略遊戲「物語」系列",
+  },
+  {
+    id: "tool",
+    title: "工具",
+    subtitle: "一鍵完成日常工作的瀏覽器擴充功能",
+  },
+];
+
 const products: Product[] = [
+  {
+    title: "手搖飲物語 Tea Bar Story",
+    description:
+      "從夜市一台攤車開始，研發配方、招募店員、搶下每週的流行趨勢，撐過每個挑戰週，把小攤做成全球排隊的手搖飲帝國。",
+    image: "/img/projects/teabarstory.jpg",
+    link: "https://www.teabarstory.com",
+    status: "active",
+    tags: ["經營策略遊戲", "Roguelite", "3D"],
+    category: "game",
+  },
+  {
+    title: "獨角獸物語 Way to Unicorn",
+    description:
+      "從爸媽家的車庫開始，開發產品、組建團隊、說服投資人，在現金燒光之前把公司做到估值 10 億美元。",
+    image: "/img/projects/waytounicorn.jpg",
+    link: "https://www.waytounicorn.com",
+    status: "active",
+    tags: ["經營策略遊戲", "創業", "3D"],
+    category: "game",
+  },
+  {
+    title: "市政廳物語 90 Days to City Hall",
+    description:
+      "倒數 90 天就是市長選舉：從騎樓小店面起步，安排行程、組建競選團隊、構築競選流派，在開票夜贏得新港市。當選後還能挑戰四年任期。",
+    image: "/img/projects/90daystocityhall.png",
+    link: "https://www.90daystocityhall.com",
+    status: "active",
+    tags: ["經營策略遊戲", "Roguelite", "選舉"],
+    category: "game",
+  },
+  {
+    title: "王牌球探物語 Next Baseball Ace",
+    description:
+      "化身職棒球團的新球探，十六週跑遍全島球場，在能力值的迷霧裡發掘新秀，撐過球探會議，在選秀會上挑出下一位王牌。",
+    image: "/img/projects/nextbaseballace.png",
+    link: "https://www.nextbaseballace.com",
+    status: "active",
+    tags: ["經營策略遊戲", "Roguelite", "棒球"],
+    category: "game",
+  },
   {
     title: "LifePicks 人生推書店",
     description:
@@ -22,6 +83,7 @@ const products: Product[] = [
     link: "https://www.lifepicksbookstore.com/",
     status: "active",
     tags: ["選書電商", "閱讀"],
+    category: "product",
   },
   {
     image: "/img/projects/careertags.webp",
@@ -31,6 +93,7 @@ const products: Product[] = [
     tags: ["Chrome 擴充", "職涯發展"],
     status: "active",
     link: "https://www.careertags.com/",
+    category: "tool",
   },
   {
     image: "/img/projects/certgym.webp",
@@ -40,6 +103,17 @@ const products: Product[] = [
     tags: ["Education", "Certification", "Learning"],
     status: "coming-soon",
     link: "https://www.certgym.com/",
+    category: "product",
+  },
+  {
+    image: "/img/projects/happyprompt.webp",
+    title: "HappyPrompt 提示詞管理工具",
+    description:
+      "瀏覽器擴充功能，一鍵儲存與插入 AI Prompt 指令，支援 ChatGPT、Claude、Gemini，內建 50+ 跨職能專業提示詞庫。免登入，資料只存在本地。",
+    tags: ["Chrome 擴充", "AI", "生產力"],
+    status: "active",
+    link: "https://www.happyprompt.net/",
+    category: "tool",
   },
 ];
 
@@ -112,11 +186,25 @@ export default function Products(): ReactNode {
 
         <section className={styles.productsSection}>
           <div className="container">
-            <div className={styles.productsGrid}>
-              {products.map((product, idx) => (
-                <ProductCard key={idx} product={product} />
-              ))}
-            </div>
+            {categories.map((category) => (
+              <div key={category.id} className={styles.categoryBlock}>
+                <div className={styles.categoryHeader}>
+                  <Heading as="h2" className={styles.categoryTitle}>
+                    {category.title}
+                  </Heading>
+                  <p className={styles.categorySubtitle}>
+                    {category.subtitle}
+                  </p>
+                </div>
+                <div className={styles.productsGrid}>
+                  {products
+                    .filter((product) => product.category === category.id)
+                    .map((product) => (
+                      <ProductCard key={product.title} product={product} />
+                    ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
