@@ -93,7 +93,7 @@ const products: Product[] = [
     tags: ["Chrome 擴充", "職涯發展"],
     status: "active",
     link: "https://www.careertags.com/",
-    category: "tool",
+    category: "product",
   },
   {
     image: "/img/projects/certgym.webp",
@@ -117,12 +117,6 @@ const products: Product[] = [
   },
 ];
 
-const statusLabels = {
-  active: "正式運營",
-  beta: "公測中",
-  "coming-soon": "即將推出",
-};
-
 function ProductCard({ product }: { product: Product }) {
   return (
     <div className={styles.productCard}>
@@ -132,9 +126,6 @@ function ProductCard({ product }: { product: Product }) {
           alt={product.title}
           className={styles.productImage}
         />
-        <span className={styles.productStatus} data-status={product.status}>
-          {statusLabels[product.status]}
-        </span>
       </div>
       <div className={styles.productContent}>
         <Heading as="h3" className={styles.productTitle}>
