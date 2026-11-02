@@ -205,20 +205,20 @@ const products: Product[] = [
   },
   {
     id: "waytounicorn",
-    name: "獨角獸物語",
+    name: "車庫獨角獸物語",
     summary: "從車庫新創衝上十億估值",
     description:
       "從爸媽家的車庫起步，開發產品、組建團隊、說服投資人，在現金燒光之前把公司做到估值 10 億美元。",
     image: "/img/projects/waytounicorn.jpg",
-    url: "https://www.waytounicorn.com",
+    url: "https://www.garageunicorn.com",
     category: "game",
     platforms: [{ platform: "web" }],
     en: {
-      name: "Way to Unicorn",
+      name: "Garage Unicorn",
       summary: "From a garage startup to a billion-dollar valuation",
       description:
         "Start in your parents' garage. Build the product, hire the team and win over investors, and reach a US$1 billion valuation before the cash runs out.",
-      url: "https://www.waytounicorn.com/en",
+      url: "https://www.garageunicorn.com/en",
     },
   },
   {
