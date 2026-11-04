@@ -209,7 +209,7 @@ const products: Product[] = [
     summary: "從車庫新創衝上十億估值",
     description:
       "從爸媽家的車庫起步，開發產品、組建團隊、說服投資人，在現金燒光之前把公司做到估值 10 億美元。",
-    image: "/img/projects/waytounicorn.jpg",
+    image: "/img/projects/garagetounicorn.jpg",
     url: "https://www.garagetounicorn.com",
     category: "game",
     platforms: [{ platform: "web" }],
