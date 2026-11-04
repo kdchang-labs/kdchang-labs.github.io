@@ -28,7 +28,7 @@ KD 做過資深工程師、創業者、技術專案經理和工程主管，在�
 「物語」系列經營策略遊戲，打開瀏覽器就能玩，支援中文與英文：
 
 - **[手搖飲物語](https://www.teabarstory.com)**：從夜市攤車經營到手搖飲帝國。
-- **[車庫獨角獸物語](https://www.garageunicorn.com)**：從車庫新創衝上十億估值。
+- **[車庫獨角獸物語](https://www.garagetounicorn.com)**：從車庫新創衝上十億估值。
 - **[市政廳物語](https://www.90daystocityhall.com)**：倒數 90 天的市長選戰，當選後還有四年任期。
 - **[王牌球探物語](https://www.nextbaseballace.com)**：十六週跑遍全島球場，在選秀會挑出下一位王牌。
 

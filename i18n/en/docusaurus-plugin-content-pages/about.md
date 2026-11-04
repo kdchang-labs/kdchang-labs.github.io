@@ -28,7 +28,7 @@ That's why KD LABs products are small, but each one starts from a real problem: 
 The Monogatari series of management strategy games. They run in your browser and are available in Chinese and English:
 
 - **[Tea Bar Story](https://www.teabarstory.com/en)**: From a night market cart to a boba empire.
-- **[Garage Unicorn](https://www.garageunicorn.com/en)**: From a garage startup to a billion-dollar valuation.
+- **[Garage to Unicorn](https://www.garagetounicorn.com/en)**: From a garage startup to a billion-dollar valuation.
 - **[90 Days to City Hall](https://www.90daystocityhall.com/en)**: A 90-day race to become mayor, followed by a four-year term if you win.
 - **[Next Baseball Ace](https://www.nextbaseballace.com/en)**: Sixteen weeks of scouting ballparks across the island to pick the next ace at the draft.
 

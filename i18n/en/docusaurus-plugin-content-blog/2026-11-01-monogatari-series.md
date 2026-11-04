@@ -26,11 +26,11 @@ Start with a single night market cart. Develop recipes, hire staff and catch eac
 
 Play: [www.teabarstory.com](https://www.teabarstory.com/en)
 
-## Garage Unicorn: From a Garage Startup to a Billion-Dollar Valuation
+## Garage to Unicorn: From a Garage Startup to a Billion-Dollar Valuation
 
 Start in your parents' garage. Build the product, hire the team and win over investors. Cash burns every day, and you need to grow the company into a US$1 billion unicorn before it runs out.
 
-Play: [www.garageunicorn.com](https://www.garageunicorn.com/en)
+Play: [www.garagetounicorn.com](https://www.garagetounicorn.com/en)
 
 ## 90 Days to City Hall
 

@@ -26,11 +26,11 @@ KD LABs 除了 App 和瀏覽器擴充功能，也開始做**經營策略遊戲**
 
 遊戲網址：[www.teabarstory.com](https://www.teabarstory.com)
 
-## 車庫獨角獸物語：從車庫新創衝上十億估值！｜Garage Unicorn
+## 車庫獨角獸物語：從車庫新創衝上十億估值！｜Garage to Unicorn
 
 從爸媽家的車庫開始，開發產品、組建團隊、說服投資人。現金每天都在燃燒，你要在燒光之前，把公司做到估值 10 億美元的獨角獸。
 
-遊戲網址：[www.garageunicorn.com](https://www.garageunicorn.com)
+遊戲網址：[www.garagetounicorn.com](https://www.garagetounicorn.com)
 
 ## 市政廳物語：倒數 90 天我要當市長！｜90 Days to City Hall
 
